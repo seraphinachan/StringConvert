@@ -19,8 +19,13 @@ try
     int result;
     if (int.TryParse(root, out result))
     {
-        foreach (var r in root)
-            Console.WriteLine("{0}" + ", "  + r);
+        // 문자열을 각 문자로 분리하여 콤마로 구분된 문자열로 변환
+        string commaSeparated = string.Join(",", root.ToArray());
+        Console.WriteLine(commaSeparated);
+    }
+    else
+    {
+        Console.WriteLine("입력한 문자열을 숫자로 변환할 수 없습니다.");
     }
 }
 catch(Exception ex)
